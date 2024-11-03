@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops!</title>
+    <script src="stars.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: rgb(15 23 42);
+            --text-color: rgb(226 232 240);
+        }
+
+        @font-face {
+            font-family: 'Comfortaa';
+            src: url('Comfortaa.ttf') format('truetype');
+            font-display: swap;
+        }
+
+        html,
+        body {
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Comfortaa', system-ui, sans-serif;
+            padding: 1.5rem;
+        }
+
+        .starry-container {
+            position: fixed;
+            /* Changed from static */
+            inset: 0;
+            /* Fills the viewport */
+            display: grid;
+            /* Added grid display */
+            place-items: center;
+            /* Centers content */
+            min-height: 100vh;
+        }
+
+        .text {
+            font-size: clamp(1.25rem, 4vw, 1.5rem);
+            text-align: center;
+            max-width: 70ch;
+            margin: 0;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.2;
+                transform: scale(0.8);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="starry-container" id="starryContainer">
+        <div class="content-wrapper">
+            <p class="text">There's nothing here...</p>
+        </div>
+    </div>
+    <script>
+        const starryBg = new StarryBackground('#starryContainer', {
+            starCount: 5,
+            minDuration: 10,
+            maxDuration: 20
+        });
+    </script>
+</body>
+
+</html>

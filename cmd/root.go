@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/lab42/ingress-backend/templates"
+	"github.com/lab42/ingress-backend/static"
 	"github.com/labstack/echo-contrib/echoprometheus"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -24,10 +24,11 @@ var rootCmd = &cobra.Command{
 
 		e := echo.New()
 		e.HideBanner = true
+		e.HidePort = true
 
 		// Add middleware
 		e.Use(
-			echoprometheus.NewMiddleware("not_found"),
+			echoprometheus.NewMiddleware("ingress_backend"),
 			middleware.Logger(),
 			middleware.RequestID(),
 			middleware.Recover(),
@@ -47,7 +48,7 @@ var rootCmd = &cobra.Command{
 			// Check if the provided path exists
 			if _, err := os.Stat(filePath); os.IsNotExist(err) {
 				e.Logger.Printf("Configured file path does not exist: %s. Falling back to embedded files.", filePath)
-				handler = http.FileServer(http.FS(templates.FS))
+				handler = http.FileServer(http.FS(static.FS))
 			} else {
 				// Use the configured file path
 				handler = http.FileServer(http.Dir(filePath))
@@ -55,7 +56,7 @@ var rootCmd = &cobra.Command{
 			}
 		} else {
 			// Use embedded files if no path is configured
-			handler = http.FileServer(http.FS(templates.FS))
+			handler = http.FileServer(http.FS(static.FS))
 		}
 
 		// Metrics server
@@ -63,6 +64,7 @@ var rootCmd = &cobra.Command{
 			// Create a separate Echo instance for metrics
 			eProm := echo.New()
 			eProm.HideBanner = true
+			eProm.HidePort = true
 
 			// Add middleware
 			eProm.Use(
@@ -85,7 +87,6 @@ var rootCmd = &cobra.Command{
 		}()
 
 		e.GET("/*", echo.WrapHandler(handler))
-		e.Logger.Printf("Starting server on port %s", serverPort)
 		e.Logger.Fatal(e.Start(fmt.Sprintf(":%s", serverPort)))
 	},
 }
