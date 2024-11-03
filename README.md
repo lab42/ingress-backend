@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/github/go-mod/go-version/lab42/ingress-backend?style=flat-square" alt="Go Version" height="30" />
   <img src="https://img.shields.io/github/license/lab42/ingress-backend?style=flat-square" alt="License" height="30" />
   <a href="https://goreportcard.com/report/github.com/lab42/ingress-backend">
-    <img src="https://goreportcard.com/badge/github.com/lab42/ingress-backend?style=flat-square" alt="Go Report Card" height="30" target="_blank" />
+    <img src="https://goreportcard.com/badge/github.com/lab42/ingress-backend?style=flat-square" alt="Go Report Card" height="30" />
   </a>
   <a href="https://sonarcloud.io/summary/overall?id=lab42_ingress-backend">
   <img src="https://img.shields.io/sonar/quality_gate/lab42_ingress-backend/main?server=https%3A%2F%2Fsonarcloud.io&style=flat-square" alt="SonarCloud Quality Gate" height="30">
