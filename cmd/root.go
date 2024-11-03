@@ -38,6 +38,11 @@ var rootCmd = &cobra.Command{
 			middleware.GzipWithConfig(middleware.GzipConfig{}),
 		)
 
+		// Health check route
+		e.GET("/health", func(c echo.Context) error {
+			return c.String(http.StatusOK, "OK")
+		})
+
 		// Determine which file source to use
 		var handler http.Handler
 
