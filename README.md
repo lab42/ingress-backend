@@ -59,8 +59,8 @@ Default HTML example:
 
 `ingress-backend` can be configured using command-line arguments, environment variables, or a YAML configuration file. The following options are available:
 
-- `--port` / `ingress-backend_PORT`: HTTP server port (default 1234)
-- `--path` / `ingress-backend_PATH`: Root file path (not required)
+- `--port` / `INGRESS_BACKEND_PORT`: HTTP server port (default 1234)
+- `--path` / `INGRESS_BACKEND_PATH`: Root file path (not required)
 - `--config`: Path to config file (default: `$HOME/.ingress-backend.yaml`)
 
 <h3 align="center">Example YAML Configuration File</h3>
