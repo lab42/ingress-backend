@@ -8,6 +8,7 @@
   <a href="https://goreportcard.com/report/github.com/lab42/ingress-backend">
     <img src="https://goreportcard.com/badge/github.com/lab42/ingress-backend?style=flat-square" alt="Go Report Card" height="30" target="_blank" />
   </a>
+  <img src="https://img.shields.io/sonar/quality_gate/lab42%3Alab42_ingress-backend?server=htps%3A%2F%2Fsonarcloud.io&style=flat-square" alt="Sonarcloud Quality Gate" height="30">
 </p>
 
 <br/>

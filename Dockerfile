@@ -1,5 +1,5 @@
 # Setup
-FROM alpine:3.20 as setup
+FROM alpine:3.20 AS setup
 RUN addgroup --gid 10000 -S appgroup && \
     adduser --uid 10000 -S appuser -G appgroup
 
