@@ -1,0 +1,49 @@
+name: Main
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: read
+  packages: read
+  security-events: write
+  actions: read
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: 'ubuntu-latest'
+    timeout-minutes: 360
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Initialize CodeQL for Go
+        uses: github/codeql-action/init@v3
+        with:
+          languages: go
+          build-mode: autobuild
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:go"
+  tag:
+    name: Tag
+    runs-on: ubuntu-latest
+    needs: analyze
+    steps:
+      - name: "[Setup] repository"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: "[Setup] Go"
+        uses: actions/setup-go@v5
+        with:
+          go-version: stable
+      - name: "[Setup] svu"
+        run: go install github.com/caarlos0/svu@latest
+      - name: "[CD] release"
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git fetch --tags --force
+          [ $(svu current) == $(svu next) ] || gh release create $(svu next)
+        env:
+          GH_TOKEN: ${{ secrets.TOKEN }}
