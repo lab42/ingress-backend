@@ -6,11 +6,11 @@
   <img src="https://img.shields.io/github/go-mod/go-version/lab42/ingress-backend?style=flat-square" alt="Go Version" height="30" />
   <img src="https://img.shields.io/github/license/lab42/ingress-backend?style=flat-square" alt="License" height="30" />
   <a href="https://goreportcard.com/report/github.com/lab42/ingress-backend">
-    <img src="https://goreportcard.com/badge/github.com/lab42/ingress-backend?style=flat-square" alt="Go Report Card" height="30" />
+    <img src="https://goreportcard.com/badge/github.com/lab42/ingress-backend?style=flat-square" alt="Go Report Card" height="30" target="_blank" />
   </a>
 </p>
 
-<h2 align="center">Contents</h2>
+<br/>
 
 - [Overview](#overview)
 - [Features](#features)
@@ -35,11 +35,17 @@
 - [Contributing](#contributing)
 - [License](#license)
 
----
+<br/>
+
 
 <h2 align="center">Overview</h2>
 
 This Docker image provides a simple, customizable ingress-backend page solution for Kubernetes ingress controllers. Built on a scratch container, it minimizes attack vectors and enhances security. It can be used as a default backend to handle undefined or unmatched routes across various ingress implementations.
+
+Default HTML example:
+
+![](assets/default-html.png)
+
 
 <h2 align="center">Features</h2>
 

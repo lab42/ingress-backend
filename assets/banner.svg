@@ -38,7 +38,7 @@
 
 
     <text text-anchor="middle" alignment-baseline="middle" x="50%" y="35%" class="text"
-        style="fill:#F0F6FC;" stroke="#none" stroke-width="1">K8S Ingress Backend</text>
+        style="fill:#F0F6FC;" stroke="#none" stroke-width="1">Ingress Backend</text>
     <text text-anchor="middle" alignment-baseline="middle" x="50%" y="55%" class="desc"
         style="fill:#F0F6FC;">No request left behind</text>
 </svg>
