@@ -1,6 +1,6 @@
 module github.com/lab42/ingress-backend
 
-go 1.23
+go 1.23.2
 
 require (
 	github.com/labstack/echo-contrib v0.17.1
