@@ -45,9 +45,9 @@
 
 This Docker image provides a simple, customizable ingress-backend page solution for Kubernetes ingress controllers. Built on a scratch container, it minimizes attack vectors and enhances security. It can be used as a default backend to handle undefined or unmatched routes across various ingress implementations.
 
-Default HTML example:
+Default HTML example can be found using the following link
 
-![](assets/default-html.png)
+![example]([assets/default-html.png](https://ingress-backend.pages.dev/))
 
 
 <h2 align="center">Features</h2>
