@@ -47,7 +47,7 @@ This Docker image provides a simple, customizable ingress-backend page solution 
 
 Default HTML example can be found using the following link
 
-![example]([https://ingress-backend.pages.dev/))
+<a href="https://ingress-backend.pages.dev/" target="_blank">Example</a>
 
 
 <h2 align="center">Features</h2>
