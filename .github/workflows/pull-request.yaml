@@ -21,7 +21,7 @@ jobs:
     needs: validate-title
     steps:
       - name: "[Setup] repository"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: "[CI] GoReleaser"
         uses: goreleaser/goreleaser-action@v6
         with:
@@ -32,7 +32,7 @@ jobs:
     needs: validate-title
     steps:
       - name: "[Setup] repository"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: "[CI] Validate Dockerfile"
         uses: hadolint/hadolint-action@v3.1.0
         with:
