@@ -8,8 +8,8 @@ import (
 
 	"github.com/lab42/ingress-backend/static"
 	"github.com/labstack/echo-contrib/echoprometheus"
-	"github.com/labstack/echo/v4"
-	"github.com/labstack/echo/v4/middleware"
+	"github.com/labstack/echo/v5"
+	"github.com/labstack/echo/v5/middleware"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
