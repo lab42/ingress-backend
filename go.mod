@@ -4,7 +4,7 @@ go 1.26.0
 
 require (
 	github.com/labstack/echo-contrib v0.50.1
-	github.com/labstack/echo/v4 v4.16.2
+	github.com/labstack/echo/v4 v4.16.3
 	github.com/spf13/cobra v1.10.2
 	github.com/spf13/viper v1.21.0
 )
